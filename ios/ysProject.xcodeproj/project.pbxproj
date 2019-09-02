@@ -41,6 +41,7 @@
 		39B1AD29C92C4F0BB93C8B32 /* libRNGestureHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 88BCB93F67E242E3ACCFDE75 /* libRNGestureHandler.a */; };
 		46054D6B452546368EB5D736 /* libRNSVG.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B5907D2D3C4143E48E7D2F2C /* libRNSVG.a */; };
 		49CC70B935ED470EA096E98D /* libRNSVG-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D17E3DCE5CB1402C85549E03 /* libRNSVG-tvOS.a */; };
+		4B2B706C231D0A4D00BEBC6C /* AlibcTradeSDK.framework in Resources */ = {isa = PBXBuildFile; fileRef = 4B2B7038231D0A4D00BEBC6C /* AlibcTradeSDK.framework */; };
 		65E9374396274BC08511EE7F /* libRNCWebView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA9AF71A62F04DE987D09F67 /* libRNCWebView.a */; };
 		7D266DD7B0FA4C68B94673E6 /* libRCTWeChat.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DF3A217040E4F99B40D3284 /* libRCTWeChat.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
@@ -60,10 +61,6 @@
 		C19FE23722A2265E00E3571F /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C19FE23622A2265E00E3571F /* ImageIO.framework */; };
 		C19FE23922A2266600E3571F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C19FE23822A2266600E3571F /* CoreData.framework */; };
 		C19FE23B22A2266F00E3571F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C19FE23A22A2266F00E3571F /* CoreLocation.framework */; };
-		C19FE26722A2284600E3571F /* AlibabaAuthSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C19FE26622A2284500E3571F /* AlibabaAuthSDK.bundle */; };
-		C19FE26B22A2284D00E3571F /* AlipaySDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C19FE26822A2284C00E3571F /* AlipaySDK.bundle */; };
-		C19FE26C22A2284D00E3571F /* ALPLinkPartnerSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C19FE26922A2284C00E3571F /* ALPLinkPartnerSDK.bundle */; };
-		C19FE26D22A2284D00E3571F /* NBResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = C19FE26A22A2284D00E3571F /* NBResource.bundle */; };
 		C1CCC74D22A4DED70010480F /* libRCTCameraRoll.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C1CCC72422A4DE740010480F /* libRCTCameraRoll.a */; };
 		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
 		ED2971652150620600B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2971642150620600B7C4FE /* JavaScriptCore.framework */; };
@@ -470,6 +467,7 @@
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F2044A83E4A4F988B478EC4 /* RNImagePicker.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNImagePicker.xcodeproj; path = "../node_modules/react-native-image-picker/ios/RNImagePicker.xcodeproj"; sourceTree = "<group>"; };
 		4790230C9FFF49549FF25F72 /* RNGestureHandler.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNGestureHandler.xcodeproj; path = "../node_modules/react-native-gesture-handler/ios/RNGestureHandler.xcodeproj"; sourceTree = "<group>"; };
+		4B2B7038231D0A4D00BEBC6C /* AlibcTradeSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AlibcTradeSDK.framework; sourceTree = "<group>"; };
 		4D979ED3D0FC4CB6976BC4BE /* libBVLinearGradient.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libBVLinearGradient.a; sourceTree = "<group>"; };
 		57DBD4E0AC7840DAA60D039A /* RCTWeChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = RCTWeChatTests.xctest; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
@@ -857,6 +855,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				4B2B7038231D0A4D00BEBC6C /* AlibcTradeSDK.framework */,
 				C196C27322FAC5400037CB1D /* WebP.framework */,
 				C19FE26822A2284C00E3571F /* AlipaySDK.bundle */,
 				C19FE26922A2284C00E3571F /* ALPLinkPartnerSDK.bundle */,
@@ -1595,12 +1594,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B2B706C231D0A4D00BEBC6C /* AlibcTradeSDK.framework in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				C19FE23122A2250800E3571F /* yw_1222.jpg in Resources */,
-				C19FE26722A2284600E3571F /* AlibabaAuthSDK.bundle in Resources */,
-				C19FE26B22A2284D00E3571F /* AlipaySDK.bundle in Resources */,
-				C19FE26C22A2284D00E3571F /* ALPLinkPartnerSDK.bundle in Resources */,
-				C19FE26D22A2284D00E3571F /* NBResource.bundle in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
