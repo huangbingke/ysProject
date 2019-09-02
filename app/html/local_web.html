@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=UTF-8; X-Content-Type-Options=nosniff" http-equiv="Content-Type" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0"/>
+    <meta name="format-detection" content="telephone=no"/>
+</head>
+<body>
+    <div>test</div>
+    <div id="container">
+        <!--<div v-html="desc"></div>-->
+    </div>
+    <script type="text/javascript" src="http://yishengdata.oss-cn-shenzhen.aliyuncs.com/app_js/axios.min.js"></script>
+    <script type="text/javascript" src="http://yishengdata.oss-cn-shenzhen.aliyuncs.com/app_js/vue.min.js"></script>
+    <script type="text/javascript">
+        var vm = new Vue({
+            el: '#container',
+            data(){
+                return {
+                    desc: '',
+                    descParser: null,
+                    descApi: 'http://test-tbk.32wd.cn/v1/descImages',
+                    sellerApi: 'http://test-tbk.32wd.cn/v1/seller',
+                    sellerParser: null
+                }
+            },
+            mounted (){
+            },
+            created (){
+                window.bindItemId = function(itemId){
+                    if(itemId){
+                        vm.getDescApiInfo(itemId)
+                        vm.getSellerApiInfo(itemId)
+                    }
+                }
+            },
+            methods: {
+                // 获取图文详情的远程api
+                getDescApiInfo: function(itemId){
+                    var $this = this
+                    axios.post(this.descApi, {
+                        itemId: itemId
+                    }).then(function(res){
+                        var data = res.data.data
+                        var apiUrl = data.url
+                        var parseCode = data.code
+                        console.info(apiUrl);
+                        axios.get(apiUrl).then(function(resp){
+                            var pages = resp.data.data.wdescContent.pages;
+                            console.info(pages);
+                            var imageArray = [];
+                            var result = [];
+                            var descXXX = ''
+                            for (var index = 0; index < pages.length; index ++) {
+                              var reg = /<img size=(\d+)x(\d+)>(.+?)<\/img>/;
+                              var reg1 = /<img>(.+?)<\/img>/;
+                              if(pages[index].match(reg)){
+                                  var image = {'width': RegExp.$1, 'height': RegExp.$2, 'url': 'http:' + RegExp.$3};
+                                  var imgNode = '<img style="width: 100%;display: block;" src="http:' + RegExp.$3 + '">';
+                                  imageArray.push(RegExp.$3);
+                                  descXXX = descXXX + imgNode;
+                                  result.push(image)
+                              }else if(pages[index].match(reg1)){
+                                  //var image = {'width': RegExp.$1, 'height': RegExp.$2, 'url': 'http:' + RegExp.$3};
+                                  //var imgNode = '<img style="width: 100%;display: block;" src="http:' + RegExp.$3 + '">';
+                                  imageArray.push(RegExp.$1);
+                                  //descXXX = descXXX + imgNode;
+                                  result.push(image)
+                              }
+                              //var arr = pages[index].match(reg);
+                            }
+                            $this.desc = descXXX
+                            let finalObj = {
+                            	action: 'getDesc',
+                              data: JSON.stringify(imageArray)
+                            }
+													  window.ReactNativeWebView.postMessage(JSON.stringify(finalObj))
+                        })
+                    })
+                },
+                getSeller: function(json){
+                    return json.data.seller
+                },
+                // 获取店铺信息的远程api
+                getSellerApiInfo: function(itemId){
+                    var $this = this
+                    axios.post($this.sellerApi, {
+                        itemId: itemId
+                    }).then(function(res){
+                        var data = res.data.data
+                        var apiUrl = data.url
+                        var parseCode = data.code
+                        axios.get(apiUrl, '', {
+                        headers: {
+                            "accept": "*/*",
+                            "accept-encoding": "gzip, deflate, br",
+                            "upgrade-insecure-requests": "1",
+                            "user-agent": "Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Mobile Safari/537.36"
+                        }
+                        }).then(function(res){
+                            var data = $this.getSeller(res.data)
+                            var finalObj = {
+                            	action: 'getSeller',
+                              data: JSON.stringify(data)
+                            }
+                            window.ReactNativeWebView.postMessage(JSON.stringify(finalObj))
+                        })
+                    })
+                }
+            }
+        });
+    </script>
+</body>
+</html>

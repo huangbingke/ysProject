@@ -1,0 +1,6 @@
+import JSEncrypt from 'jsencrypt/bin/jsencrypt'
+
+const crypt = new JSEncrypt()
+crypt.setPublicKey('MIIBIDANBgkqhkiG9w0BAQEFAAOCAQ0AMIIBCAKCAQEAniAPURmivGZfcmB1sWAqzYe33q1dTHLzXnfLFLr10TQpZT258OXCmQhPU3+dB8TWep1OCmOIK6vlf49OcGBZwXybxwh8+F0piJJ1pudJgbI2XsphyIdTI8Kn6sID5jJGhC2HYLhChSJDZAdh3bPMmEVMni0BbgubgLeoAXGA3xhJABYIs80lUX0yNDRZzXPB6ydWSgUlbeCD2CsVJqmTnm98akzPY1AWrv/kMbtpkqk5bIzCobSwCeYaotO8CYaOOiPhVFC5C/N1rMUbK7mkG0oYsn/vbmc+0POCbFNlURx6ehYZsV2RKT0iqCOjzbmtLa696W02o6iy4iTMD9IP3QIBAw==')
+
+export const rsa = crypt
